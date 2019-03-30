@@ -30,18 +30,18 @@ def main():
                     users[(user.surname.lower(), user.forename.lower(),
                             user.id)] = user
     lst = convert_to_list(users)
+    print("\n")
     while lst:
         print_page(lst)
 
 def print_page(lst):
     left_column = make_column(lst)
     right_column = make_column(lst)
-    
     print_the_header()
     for k in range(64):
         line = left_column[k] + ' '*4 + right_column[k]
-        if line:
-        print(line)
+        if not line.isspace():
+            print(line)
     print("\f")
 
     
